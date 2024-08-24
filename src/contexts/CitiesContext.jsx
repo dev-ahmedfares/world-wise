@@ -7,7 +7,7 @@ import {
   
 } from "react";
 
-const BASE_URL = "http://localhost:9000";
+const BASE_URL = "https://dev-ahmedfares.github.io/citites-api-json-server/cities.json";
 
 const CitiesContext = createContext();
 
@@ -63,7 +63,7 @@ function CitiesProvider({ children }) {
       try {
         const res = await fetch(`${BASE_URL}/cities`);
         const data = await res.json();
-
+        console.log(data)
         dispatch({ type: "cities/loaded", payload: data });
       } catch {
         dispatch({
@@ -74,7 +74,7 @@ function CitiesProvider({ children }) {
     }
     fetchCities();
   }, []);
-
+  
   const fetchCurrentCity = useCallback(
     async function fetchCurrentCity(id) {
       if (Number(id) === currentCity.id) return; // To prevent to fetch currentCity Again
@@ -136,7 +136,7 @@ function CitiesProvider({ children }) {
       });
     }
   }
-
+  
   return (
     <CitiesContext.Provider
       value={{
