@@ -7,7 +7,7 @@ import {
   
 } from "react";
 
-const BASE_URL = "https://dev-ahmedfares.github.io/citites-api-json-server/cities.json";
+const BASE_URL = "https://rest-ful-api-for-cities.vercel.app";
 
 const CitiesContext = createContext();
 
