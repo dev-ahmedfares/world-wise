@@ -7,7 +7,8 @@ import {
   
 } from "react";
 
-const BASE_URL = "https://rest-ful-api-for-cities.vercel.app";
+// const BASE_URL = "https://rest-ful-api-for-cities.vercel.app";
+const BASE_URL = "https://my-json-server.typicode.com/dev-ahmedfares/api-for-worldwise-pro";
 
 const CitiesContext = createContext();
 
@@ -63,7 +64,7 @@ function CitiesProvider({ children }) {
       try {
         const res = await fetch(`${BASE_URL}/cities`);
         const data = await res.json();
-        console.log(data)
+
         dispatch({ type: "cities/loaded", payload: data });
       } catch {
         dispatch({
